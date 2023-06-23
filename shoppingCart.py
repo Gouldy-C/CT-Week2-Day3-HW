@@ -18,12 +18,18 @@ def shoppingCart():
             print("Please enter a valid response to the questions.\n")
 
 def addItem():
-    item = input('\nWhat would you like to add to your shopping list?: [item] ')
-    qty = input('\nHow many do you need?: [qty] ')
-    shopping_cart[item] = qty
+    item = input('\nWhat would you like to add to your shopping list?: [item] ').title()
+    while True:
+        try:
+            qty = int(input('\nHow many do you need?: [qty] '))
+            break
+        except:
+            print("Please enter a valid integer quantity")
+    
+    shopping_cart[item.title()] = qty
 
 def removeItem():
-    item = input('\nWhat would you like to remove from your shopping list?: [item] ')
+    item = input('\nWhat would you like to remove from your shopping list?: [item] ').title()
     if item in shopping_cart:
         shopping_cart.pop(item)
         print(f"{item} was removed.\n")
