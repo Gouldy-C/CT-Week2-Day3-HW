@@ -30,11 +30,11 @@ def addItem():
 
 def removeItem():
     item = input('\nWhat would you like to remove from your shopping list?: [item] ').title()
-    if item in shopping_cart:
+    try:
         shopping_cart.pop(item)
         print(f"{item} was removed.\n")
         print(f"------------------------\n")
-    else:
+    except:
         print(f"{item} is not in your shopping list.\n")
         print(f"------------------------\n")
 
