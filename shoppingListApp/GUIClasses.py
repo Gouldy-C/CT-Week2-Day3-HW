@@ -1,5 +1,4 @@
-from customtkinter import *
-from tkinter import *
+import tkinter as tk
 import customtkinter as ctk
 
 class App(ctk.CTk):
